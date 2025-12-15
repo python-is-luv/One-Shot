@@ -502,12 +502,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ail"]
-radius = 20.0
-height = 94.0
+radius = 12.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 22.0
-height = 66.0
+radius = 13.0
+height = 54.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlg0r"]
 bg_color = Color(0.27387273, 0.27387276, 0.27387264, 1)
@@ -528,14 +528,14 @@ anti_aliasing = false
 script = ExtResource("1_hiiys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.99998856, 3.8146973e-06)
-scale = Vector2(3.7591145, 3.2984374)
+position = Vector2(7.6293945e-06, 1)
+scale = Vector2(2.3066404, 2.1617186)
 sprite_frames = SubResource("SpriteFrames_ciwxk")
 animation = &"idle_right"
 autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_i4ail")
 
 [node name="Gun" parent="."]
@@ -561,11 +561,16 @@ debug_color = Color(0.8944634, 0.29959694, 0.3035913, 0.41960785)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 10
-offset_left = -55.0
-offset_top = -103.0
-offset_right = 51.0
-offset_bottom = -94.0
+offset_left = -22.0
+offset_top = -42.0
+offset_right = 22.0
+offset_bottom = -36.0
 theme_override_styles/background = SubResource("StyleBoxFlat_qlg0r")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
 value = 100.0
 show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 1)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true

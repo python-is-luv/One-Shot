@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
-const BASE_SPEED = 100
+const BASE_SPEED = 200
 @export var health: int = 100
 signal health_depleted
 var current_speed: float = BASE_SPEED
