@@ -1,7 +1,9 @@
 extends Node2D
 @onready var player = $Player
-@export var path_follow: PathFollow2D
 @onready var score_label: Label = $Player/Camera2D/ScoreLabel
+const SPAWN_CENTER := Vector2(500, 400)
+const SPAWN_RADIUS := 80.0  # adjust for spread
+
 
 const SPAWN_INTERVAL = 1.5
 const MIN_SPAWN_DISTANCE = 300.0  # Minimum distance from player to spawn
@@ -18,28 +20,20 @@ func spawn_mob():
 	const bat = preload("res://scenes/bat.tscn")
 	const rat = preload("res://scenes/rat.tscn")
 	var mobs = [slime, bat, rat]
+	
 	var mob_scene = mobs[randi() % mobs.size()]
 	var mob = mob_scene.instantiate()
-	
-	# Find a spawn position far from player
-	var max_attempts = 10
-	var spawn_pos: Vector2
-	
-	for attempt in range(max_attempts):
-		path_follow.progress_ratio = randf()
-		spawn_pos = path_follow.global_position
-		
-		# Check distance from player
-		var distance = player.global_position.distance_to(spawn_pos)
-		if distance >= MIN_SPAWN_DISTANCE:
-			break
-	
-	mob.global_position = spawn_pos
-	
-	# listen for mob death
+
+	# Random position around (500, 400)
+	var angle = randf() * TAU
+	var radius = randf() * SPAWN_RADIUS
+	var offset = Vector2(cos(angle), sin(angle)) * radius
+	mob.global_position = SPAWN_CENTER + offset
+
+	# Listen for mob death
 	if mob.has_signal("died"):
 		mob.died.connect(_on_mob_died)
-	
+
 	add_child(mob)
 
 func _process(delta: float) -> void:

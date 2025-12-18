@@ -14,7 +14,10 @@ func _physics_process(delta: float) -> void:
 	update_animation(direction)
 
 	const DAMAGE_RATE = 5
-	var overlapping_mobs = $Hitbox.get_overlapping_bodies()
+	var overlapping_mobs = []
+	for body in $Hitbox.get_overlapping_bodies():
+		if body.is_in_group("enemy"):
+			overlapping_mobs.append(body)
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE*overlapping_mobs.size()*delta
 		$HealthBar.value = health

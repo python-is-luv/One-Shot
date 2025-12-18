@@ -83,7 +83,9 @@ animations = [{
 radius = 13.0
 height = 44.0
 
-[node name="Rat" type="CharacterBody2D"]
+[node name="Rat" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_77a1s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

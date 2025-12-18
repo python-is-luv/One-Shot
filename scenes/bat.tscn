@@ -82,7 +82,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhqni"]
 radius = 21.095022
 
-[node name="Bat" type="CharacterBody2D"]
+[node name="Bat" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_cnldk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
