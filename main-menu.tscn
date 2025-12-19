@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c207eh03jhkby"]
+[gd_scene load_steps=9 format=3 uid="uid://c207eh03jhkby"]
 
 [ext_resource type="Texture2D" uid="uid://ddhl8lhsyarx6" path="res://assets/mainmenu-bg.png" id="1_gvk52"]
 [ext_resource type="Script" uid="uid://d3r81gvifun2j" path="res://scripts/main_menu.gd" id="1_mue8r"]
 [ext_resource type="FontFile" uid="uid://dj57d3p76kqe4" path="res://fonts/Resident-Evil-7.otf" id="2_j3jwc"]
+[ext_resource type="AudioStream" uid="uid://cvv0p1pmbte1t" path="res://assets/Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version' - Rubhen925.mp3" id="4_holw3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
 resource_name = "red_button_hover"
@@ -117,18 +118,15 @@ text = "PLAY"
 [node name="VSeparator" type="VSeparator" parent="UI/MainContainer/MenuButtons"]
 layout_mode = 2
 
-[node name="SETTINGS" type="Button" parent="UI/MainContainer/MenuButtons"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
-theme_override_font_sizes/font_size = 18
-text = "SETTINGS"
-
 [node name="QUIT" type="Button" parent="UI/MainContainer/MenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
 theme_override_font_sizes/font_size = 18
 text = "QUIT"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_holw3")
+autoplay = true
+
 [connection signal="pressed" from="UI/MainContainer/MenuButtons/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="UI/MainContainer/MenuButtons/SETTINGS" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="UI/MainContainer/MenuButtons/QUIT" to="." method="_on_quit_pressed"]

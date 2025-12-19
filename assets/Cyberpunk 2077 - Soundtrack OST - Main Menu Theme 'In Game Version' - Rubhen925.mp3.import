@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvv0p1pmbte1t"
+path="res://.godot/imported/Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version' - Rubhen925.mp3-3d8c209ca2a4b4a9e6a2e44ddfa66ba0.mp3str"
+
+[deps]
+
+source_file="res://assets/Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version' - Rubhen925.mp3"
+dest_files=["res://.godot/imported/Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version' - Rubhen925.mp3-3d8c209ca2a4b4a9e6a2e44ddfa66ba0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

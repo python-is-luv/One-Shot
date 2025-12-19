@@ -564,16 +564,16 @@ show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="ScoreLabel" type="Label" parent="Camera2D"]
-offset_left = -385.0
-offset_top = -213.0
-offset_right = -266.0
-offset_bottom = -165.0
+offset_left = -287.0
+offset_top = -159.0
+offset_right = -168.0
+offset_bottom = -111.0
 
 [node name="BulletLabel" type="Label" parent="Camera2D"]
-offset_left = 252.0
-offset_top = -215.0
-offset_right = 384.0
-offset_bottom = -171.0
+offset_left = 158.0
+offset_top = -163.0
+offset_right = 290.0
+offset_bottom = -119.0
