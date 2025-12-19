@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://brsag8jtus8yf"]
+
+[ext_resource type="Texture2D" uid="uid://cuffinngcahmg" path="res://assets/Other/aim.png" id="1_1eco6"]
+[ext_resource type="Script" uid="uid://bhe8cnw52s3p1" path="res://scripts/cursor.gd" id="1_s0nli"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0nli"]
+radius = 21.0
+
+[node name="Cursor" type="Area2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_s0nli")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.18050006, 0.17850003)
+texture = ExtResource("1_1eco6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s0nli")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

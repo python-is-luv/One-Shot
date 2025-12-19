@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://etd74kamc7mv"]
+[gd_scene load_steps=12 format=3 uid="uid://etd74kamc7mv"]
 
 [ext_resource type="Script" uid="uid://bmwlcn5w00mbi" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://bullwus12doj8" path="res://assets/dungeon/PNG/walls_floor.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://c64bmu6tvl7c3" path="res://assets/dungeon/Tiled_files/walls_floor.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dlywhcq58wd5" path="res://scenes/caleb.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://brsag8jtus8yf" path="res://scenes/cursor.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -1222,9 +1223,8 @@ texture = ExtResource("1_yqjtg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_p57ef")
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("path_follow")]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
-path_follow = NodePath("")
 
 [node name="wall_floor" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -1246,5 +1246,7 @@ layer_0/tile_data = PackedInt32Array(327687, 524288, 7, 393223, 524288, 8, 32768
 
 [node name="Player" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(-70, 182)
+
+[node name="Cursor" parent="." instance=ExtResource("5_iywne")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
